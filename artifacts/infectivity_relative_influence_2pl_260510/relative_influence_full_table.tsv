@@ -1,0 +1,15 @@
+Relative influence & related metrics (|Est.Std| / sum for CFA rows)
+Columns order: Cavity | AFB_Smear | TB_PCR | Solid_Culture | Liquid_Culture
+
+Metric	Cavity	AFB_Smear	TB_PCR	Solid_Culture	Liquid_Culture
+PCA PC1 sq-loading share (linear fixed loadings)	0.058135	0.255089	0.204299	0.264153	0.218325
+Free CFA relative influence 0-1 (linear fixed loadings)	0.084228	0.233831	0.190059	0.265485	0.226397
+Constrained CFA relative influence 0-1 (linear fixed loadings)	0.119460	0.183997	0.207176	0.232911	0.256455
+Constrained CFA relative influence 0-1 (log1p fixed loadings)	0.130427	0.191386	0.205952	0.229470	0.242765
+Constrained CFA Est.Std loadings (log1p fixed loadings)	0.401402	0.589007	0.633836	0.706217	0.747134
+Free CFA Est.Std loadings (linear fixed loadings)	0.254220	0.705759	0.573643	0.801297	0.683321
+Constrained CFA Est.Std loadings (linear fixed loadings)	0.358754	0.552566	0.622176	0.699460	0.770166
+
+Notes:
+- CFA 'relative influence' = |standardized loading| normalized to sum to 1 across the 5 indicators.
+- PCA row uses squared PC1 correlation loadings normalized to sum 1 (different construct than CFA).

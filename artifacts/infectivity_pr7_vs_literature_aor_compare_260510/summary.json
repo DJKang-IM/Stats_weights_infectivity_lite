@@ -1,0 +1,183 @@
+{
+  "input_csv": "D:\\260510_META_Infectivity_weight-rule_CSV_exclusion_delete.csv",
+  "pr7_json": "D:\\TBC_CAD_INFECTIVITY\\TB Phase III\\reports\\20260520 PR7 Entropy Effective Rank - Results.json",
+  "n_complete_case": 459,
+  "positive_counts": {
+    "Cavity": 146,
+    "AFB_Smear": 202,
+    "TB_PCR": 254,
+    "Solid_Culture": 258,
+    "Liquid_Culture": 325
+  },
+  "methods": {
+    "A_PR7_entropy_effective_rank": {
+      "weights": {
+        "Cavity": 0.32491602281647963,
+        "AFB_Smear": 0.17421353686856622,
+        "TB_PCR": 0.1544230759831844,
+        "Solid_Culture": 0.18102375338348647,
+        "Liquid_Culture": 0.1654236109482834
+      },
+      "aor_table": null,
+      "note": "Data-driven (polychoric + PLS within micro); no AOR.",
+      "label": "PR#7 Entropy Effective Rank"
+    },
+    "B_literature_aor_log_user_feedback": {
+      "weights": {
+        "Cavity": 0.16874996839166345,
+        "AFB_Smear": 0.20124934498128627,
+        "TB_PCR": 0.35098546985101736,
+        "Solid_Culture": 0.13950760838801643,
+        "Liquid_Culture": 0.13950760838801643
+      },
+      "aor_table": {
+        "Cavity": 1.9,
+        "AFB_Smear": 2.15,
+        "TB_PCR": 3.8,
+        "Solid_Culture": 1.7,
+        "Liquid_Culture": 1.7
+      },
+      "note": "User's earlier feedback. CULTURE 1.70 is actually the BAL AFB AOR from Lohmann; sputum culture has no AOR in Asadi paper. Kept for direct comparison.",
+      "label": "Lit-AOR log (feedback)"
+    },
+    "C1_paper_correct_culture_1p00": {
+      "weights": {
+        "Cavity": 0.23405482639176872,
+        "AFB_Smear": 0.2791311959936291,
+        "TB_PCR": 0.4868139768852934,
+        "Solid_Culture": 3.6465437295631523e-10,
+        "Liquid_Culture": 3.6465437295631523e-10
+      },
+      "aor_table": {
+        "Cavity": 1.9,
+        "AFB_Smear": 2.15,
+        "TB_PCR": 3.8,
+        "Solid_Culture": 1.0,
+        "Liquid_Culture": 1.0
+      },
+      "note": "Culture treated as no effect (null) since paper has no number.",
+      "label": "Paper-correct, culture AOR=1.00 (null)"
+    },
+    "C2_paper_correct_culture_1p70": {
+      "weights": {
+        "Cavity": 0.16874996839166345,
+        "AFB_Smear": 0.20124934498128627,
+        "TB_PCR": 0.35098546985101736,
+        "Solid_Culture": 0.13950760838801643,
+        "Liquid_Culture": 0.13950760838801643
+      },
+      "aor_table": {
+        "Cavity": 1.9,
+        "AFB_Smear": 2.15,
+        "TB_PCR": 3.8,
+        "Solid_Culture": 1.7,
+        "Liquid_Culture": 1.7
+      },
+      "note": "Same number as Method B but explicit that 1.70 came from BAL, not sputum culture.",
+      "label": "Paper-correct, culture AOR=1.70 (=BAL proxy)"
+    },
+    "C3_paper_correct_culture_2p00": {
+      "weights": {
+        "Cavity": 0.15546461730269184,
+        "AFB_Smear": 0.18540538228319287,
+        "TB_PCR": 0.323353078339833,
+        "Solid_Culture": 0.16788846103714117,
+        "Liquid_Culture": 0.16788846103714117
+      },
+      "aor_table": {
+        "Cavity": 1.9,
+        "AFB_Smear": 2.15,
+        "TB_PCR": 3.8,
+        "Solid_Culture": 2.0,
+        "Liquid_Culture": 2.0
+      },
+      "note": "Mid-range: bacteriologic confirmation typically >= 2x; sensitivity check.",
+      "label": "Paper-correct, culture AOR=2.00"
+    },
+    "C4_paper_pr7split_culture_2p00": {
+      "weights": {
+        "Cavity": 0.18683146432083184,
+        "AFB_Smear": 0.2228131369434938,
+        "TB_PCR": 0.3885934315282531,
+        "Solid_Culture": 0.10542354295109302,
+        "Liquid_Culture": 0.09633842425632824
+      },
+      "aor_table": {
+        "Cavity": 1.9,
+        "AFB_Smear": 2.15,
+        "TB_PCR": 3.8,
+        "Solid_Culture": 2.0,
+        "Liquid_Culture": 2.0
+      },
+      "note": "Paper-faithful AOR for smear/cavity/PCR; culture AOR=2.00; Solid vs Liquid split by PR#7 PLS within-microbiology ratio.",
+      "label": "C-pr7split-cult2.00"
+    },
+    "paper_meta_extra_reference": {
+      "weights": null,
+      "aor_table": {
+        "Cavity": {
+          "aor": 1.9,
+          "ci": [
+            1.26,
+            2.84
+          ],
+          "source": "Pooled meta-AOR (Asadi)"
+        },
+        "AFB_Smear": {
+          "aor": 2.15,
+          "ci": [
+            1.47,
+            3.17
+          ],
+          "source": "Pooled meta-AOR (Asadi)"
+        },
+        "TB_PCR": {
+          "aor": 3.8,
+          "ci": [
+            1.1,
+            13.6
+          ],
+          "source": "Single study Lohmann 2013 [13]"
+        }
+      },
+      "note": "Reference table of AORs verified from PMC9134570 (Asadi et al., EI 2022).",
+      "label": "Asadi paper AOR table (reference)"
+    }
+  },
+  "ordering_check": {
+    "PR#7 Entropy Effective Rank": {
+      "AFB_ge_Cavity": false,
+      "PCR_gt_Solid": false,
+      "PCR_gt_Liquid": false
+    },
+    "Lit-AOR log (feedback)": {
+      "AFB_ge_Cavity": true,
+      "PCR_gt_Solid": true,
+      "PCR_gt_Liquid": true
+    },
+    "Paper-correct, culture AOR=1.00 (null)": {
+      "AFB_ge_Cavity": true,
+      "PCR_gt_Solid": true,
+      "PCR_gt_Liquid": true
+    },
+    "Paper-correct, culture AOR=1.70 (=BAL proxy)": {
+      "AFB_ge_Cavity": true,
+      "PCR_gt_Solid": true,
+      "PCR_gt_Liquid": true
+    },
+    "Paper-correct, culture AOR=2.00": {
+      "AFB_ge_Cavity": true,
+      "PCR_gt_Solid": true,
+      "PCR_gt_Liquid": true
+    },
+    "C-pr7split-cult2.00": {
+      "AFB_ge_Cavity": true,
+      "PCR_gt_Solid": true,
+      "PCR_gt_Liquid": true
+    }
+  },
+  "notes": [
+    "Method B (user-feedback Lit-AOR) and Method C2 (paper-correct culture=1.70) yield identical weights; we keep both so the misattribution is visible in the comparison.",
+    "Score scale differs per method because weights sum to 1 but indicator counts active per patient vary. Use Spearman rank correlation across method columns in scores_per_method.csv to compare patient orderings (not absolute values)."
+  ]
+}

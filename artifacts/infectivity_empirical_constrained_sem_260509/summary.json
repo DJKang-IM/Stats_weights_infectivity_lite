@@ -1,0 +1,192 @@
+{
+  "input_csv": "D:\\260509_META_Infectivity_weight-rule_CSV_Edited.csv",
+  "n_complete_case": 459,
+  "empirical_sensitivity": {
+    "definition": {
+      "proxy_gold": "Liquid_Culture (액체 배양) 양성 수 — 단일 병원 메타 기준 임시 기준.",
+      "ratio_X_user_style": "n(Liquid+) / n(test+) — 같은 코호트·완전 사례 기준.",
+      "loading_prior": "Constrained CFA: Infectivity =~ fixed loadings; Liquid_Culture=1, other loadings = n(test+)/n(Liquid+) (민감도 후보가 더 적게 양성이면 액체 대비 작은 계수)."
+    },
+    "n_complete_case": 459,
+    "positive_counts": {
+      "Cavity": 146,
+      "AFB_Smear": 202,
+      "TB_PCR": 254,
+      "Solid_Culture": 258,
+      "Liquid_Culture": 325
+    },
+    "negative_counts": {
+      "Cavity": 313,
+      "AFB_Smear": 257,
+      "TB_PCR": 205,
+      "Solid_Culture": 201,
+      "Liquid_Culture": 134
+    },
+    "liquid_over_positive_ratios": {
+      "Liquid_per_AFB=(proxy_vs_AF)": 1.608910891089109,
+      "Liquid_per_Solid": 1.2596899224806202,
+      "Liquid_per_PCR": 1.279527559055118,
+      "Liquid_per_Cavity": 2.2260273972602738
+    },
+    "inverse_for_loading": {
+      "Cavity": 0.4492307692307692,
+      "AFB_Smear": 0.6215384615384615,
+      "TB_PCR": 0.7815384615384615,
+      "Solid_Culture": 0.7938461538461539,
+      "Liquid_Culture": 1.0
+    },
+    "constrained_fixed_loadings_unnormalized": {
+      "Liquid_Culture": 1.0,
+      "Cavity": 0.4492307692307692,
+      "AFB_Smear": 0.6215384615384615,
+      "TB_PCR": 0.7815384615384615,
+      "Solid_Culture": 0.7938461538461539
+    }
+  },
+  "pca": {
+    "pc1_variance_ratio": 0.5050415891254658,
+    "loadings_pc1": {
+      "Cavity": 0.3831474494469261,
+      "AFB_Smear": 0.8025906157898209,
+      "TB_PCR": 0.7182593169056647,
+      "Solid_Culture": 0.8167264661778727,
+      "Liquid_Culture": 0.7425063731568751
+    },
+    "weights_normalized_sq": {
+      "Cavity": 0.05813460561609907,
+      "AFB_Smear": 0.25508857504955235,
+      "TB_PCR": 0.20429859933520397,
+      "Solid_Culture": 0.2641533429793179,
+      "Liquid_Culture": 0.21832487701982664
+    }
+  },
+  "cfa_free_fit": {
+    "DoF": {
+      "Value": 5
+    },
+    "DoF Baseline": {
+      "Value": 10
+    },
+    "chi2": {
+      "Value": 54.40676228277925
+    },
+    "chi2 p-value": {
+      "Value": 1.728779341902964e-10
+    },
+    "chi2 Baseline": {
+      "Value": 586.353234638471
+    },
+    "CFI": {
+      "Value": 0.9142769410953846
+    },
+    "GFI": {
+      "Value": 0.9072116276184186
+    },
+    "AGFI": {
+      "Value": 0.8144232552368371
+    },
+    "NFI": {
+      "Value": 0.9072116276184186
+    },
+    "TLI": {
+      "Value": 0.8285538821907693
+    },
+    "RMSEA": {
+      "Value": 0.14688432647379046
+    },
+    "AIC": {
+      "Value": 19.76293349767852
+    },
+    "BIC": {
+      "Value": 61.053435598283976
+    },
+    "LogLik": {
+      "Value": 0.1185332511607391
+    },
+    "SRMR": {
+      "Value": 0.2580792085408556
+    }
+  },
+  "cfa_free_standardized_loadings": {
+    "Cavity": 0.25422039369664606,
+    "AFB_Smear": 0.7057593432337299,
+    "TB_PCR": 0.5736432653599018,
+    "Solid_Culture": 0.8012973445195918,
+    "Liquid_Culture": 0.6833211381060544
+  },
+  "cfa_free_relative_influence_0_1": {
+    "Cavity": 0.08422798340263606,
+    "AFB_Smear": 0.23383130434090812,
+    "TB_PCR": 0.19005877038890454,
+    "Solid_Culture": 0.26548483563167,
+    "Liquid_Culture": 0.22639710623588125
+  },
+  "constrained_fixed_loadings": {
+    "Liquid_Culture": 1.0,
+    "Cavity": 0.4492307692307692,
+    "AFB_Smear": 0.6215384615384615,
+    "TB_PCR": 0.7815384615384615,
+    "Solid_Culture": 0.7938461538461539
+  },
+  "constrained_cfa_fit": {
+    "DoF": {
+      "Value": 9
+    },
+    "DoF Baseline": {
+      "Value": 10
+    },
+    "chi2": {
+      "Value": 112.22347270204776
+    },
+    "chi2 p-value": {
+      "Value": 0.0
+    },
+    "chi2 Baseline": {
+      "Value": 586.353234638471
+    },
+    "CFI": {
+      "Value": 0.8209024145291789
+    },
+    "GFI": {
+      "Value": 0.8086077366465939
+    },
+    "AGFI": {
+      "Value": 0.7873419296073265
+    },
+    "NFI": {
+      "Value": 0.8086077366465939
+    },
+    "TLI": {
+      "Value": 0.8010026828101988
+    },
+    "RMSEA": {
+      "Value": 0.1582469102237186
+    },
+    "AIC": {
+      "Value": 11.511008833542276
+    },
+    "BIC": {
+      "Value": 36.28531009390555
+    },
+    "LogLik": {
+      "Value": 0.24449558322886222
+    },
+    "SRMR": {
+      "Value": 0.19746407932656163
+    }
+  },
+  "constrained_cfa_standardized_loadings": {
+    "Cavity": 0.35875392791203037,
+    "AFB_Smear": 0.5525660169703396,
+    "TB_PCR": 0.622176436001967,
+    "Solid_Culture": 0.6994604498096219,
+    "Liquid_Culture": 0.7701658174319265
+  },
+  "constrained_cfa_relative_influence_0_1": {
+    "Cavity": 0.11946029847828982,
+    "AFB_Smear": 0.18399715286858875,
+    "TB_PCR": 0.20717649889865122,
+    "Solid_Culture": 0.23291105018508781,
+    "Liquid_Culture": 0.2564549995693824
+  }
+}

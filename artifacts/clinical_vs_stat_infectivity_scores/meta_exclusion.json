@@ -1,0 +1,9 @@
+{
+  "meta_main": "D:\\260428_META_ALL_CSV.csv",
+  "meta_d5_source": "D:\\260428_META_ALL_CSV.csv",
+  "n_paths": 2294,
+  "n_kept": 1427,
+  "n_dropped": 867,
+  "n_parse_fail_paths": 0,
+  "d5_migeom_studies_n": 0
+}

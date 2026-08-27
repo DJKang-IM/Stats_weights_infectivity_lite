@@ -1,0 +1,74 @@
+=== Infectivity latent analysis ===
+n = 2294
+
+1) Standardization: sklearn StandardScaler on all 5 indicators.
+
+2) PCA (PC1 correlation loadings & squared-loading normalized weights)
+{
+  "Cavity": 0.3506642667130208,
+  "AFB_Smear": 0.6181402243947043,
+  "TB_PCR": 0.7304173664265812,
+  "Solid_Culture": 0.6743411818339742,
+  "Liquid_Culture": 0.741582870852478
+}
+{
+  "Cavity": 0.0601811910628439,
+  "AFB_Smear": 0.18700437372489523,
+  "TB_PCR": 0.2611078531967433,
+  "Solid_Culture": 0.22255487848829916,
+  "Liquid_Culture": 0.26915170352721846
+}
+PC1 variance ratio: 0.4087
+
+3) CFA / SEM (semopy, MLW) — Infectivity =~ 5 indicators
+              lval  op            rval  Estimate  Std. Err    z-value   p-value
+0           Cavity   ~     Infectivity  1.000000         -          -         -
+1        AFB_Smear   ~     Infectivity  2.066272  0.275544   7.498891       0.0
+2           TB_PCR   ~     Infectivity  2.977323  0.377594   7.884988       0.0
+3    Solid_Culture   ~     Infectivity  2.763508  0.352839   7.832205       0.0
+4   Liquid_Culture   ~     Infectivity  3.350986  0.422846   7.924839       0.0
+5      Infectivity  ~~     Infectivity  0.041903  0.010213   4.102799  0.000041
+6        AFB_Smear  ~~       AFB_Smear  0.821035  0.026974  30.437904       0.0
+7           Cavity  ~~          Cavity  0.958035  0.028861  33.194315       0.0
+8   Liquid_Culture  ~~  Liquid_Culture  0.529413  0.027371   19.34213       0.0
+9    Solid_Culture  ~~   Solid_Culture  0.679946  0.025978  26.174208       0.0
+10          TB_PCR  ~~          TB_PCR  0.628297  0.026161  24.016376       0.0
+
+Fit indices:
+       DoF  DoF Baseline        chi2  chi2 p-value  chi2 Baseline       CFI       GFI      AGFI       NFI      TLI     RMSEA        AIC        BIC    LogLik      SRMR
+Value    5            10  200.226091           0.0    1483.460025  0.867505  0.865028  0.730055  0.865028  0.73501  0.130491  19.825435  77.205958  0.087283  0.136741
+
+4) PLS-PM (reflective outer, iterative corr weights)
+{
+  "outer_weights": {
+    "Cavity": 0.24531855768915384,
+    "AFB_Smear": 0.4324400273189387,
+    "TB_PCR": 0.5109871353900368,
+    "Solid_Culture": 0.4717572206416635,
+    "Liquid_Culture": 0.5187983233049678
+  },
+  "outer_loadings_corr_F": {
+    "Cavity": 0.35066427744554335,
+    "AFB_Smear": 0.6181402301837808,
+    "TB_PCR": 0.7304173654997709,
+    "Solid_Culture": 0.674341176893935,
+    "Liquid_Culture": 0.7415828663570332
+  }
+}
+
+5) Priority (lower mean rank = higher priority across PCA weight order, PLS |loading|, SEM |path|):
+  Liquid_Culture: mean rank = 1.000
+  TB_PCR: mean rank = 2.000
+  Solid_Culture: mean rank = 3.000
+  AFB_Smear: mean rank = 4.000
+  Cavity: mean rank = 5.000
+
+Suggested overall priority (1 = most influential):
+  1. Liquid_Culture
+  2. TB_PCR
+  3. Solid_Culture
+  4. AFB_Smear
+  5. Cavity
+
+Model fit (rules of thumb; ML on standardized scores -- binary 0/1 indicators are approximate): CFI/TLI >= 0.95 good; RMSEA <= 0.06 reasonable; SRMR <= 0.08 good.
+Observed: CFI=0.8675, TLI=0.7350, RMSEA=0.13049140262333633, SRMR=0.13674099417923855

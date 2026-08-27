@@ -1,0 +1,38 @@
+{
+  "input_csv": "D:\\260509_META_Infectivity_weight-rule_CSV_Edited.csv",
+  "n_rows_original": 1664,
+  "n_rows_dropped_exclude": 3,
+  "n_rows_after_exclude": 1661,
+  "exclude_rule": "Reading: ###...Exclude...### OR line-end :Exclude OR 로 Exclude; optional --exclude-regex",
+  "exclude_regex_extra": null,
+  "impute": {
+    "method": "per_column_balanced_half_sorted_by_StudyNo",
+    "detail": {
+      "Cavity": {
+        "n_imputed": 989,
+        "n_zero": 494,
+        "n_one": 495
+      },
+      "AFB_Smear": {
+        "n_imputed": 285,
+        "n_zero": 142,
+        "n_one": 143
+      },
+      "TB_PCR": {
+        "n_imputed": 504,
+        "n_zero": 252,
+        "n_one": 252
+      },
+      "Solid_Culture": {
+        "n_imputed": 875,
+        "n_zero": 437,
+        "n_one": 438
+      },
+      "Liquid_Culture": {
+        "n_imputed": 428,
+        "n_zero": 214,
+        "n_one": 214
+      }
+    }
+  }
+}

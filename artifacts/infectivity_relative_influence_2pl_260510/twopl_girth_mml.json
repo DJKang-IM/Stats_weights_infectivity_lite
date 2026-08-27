@@ -1,0 +1,43 @@
+{
+  "engine": "girth.twopl_mml (Python, MML)",
+  "mirt_equivalent_call": "mirt(data, model = 1, itemtype = \"2PL\")  # binary 1-factor 2PL; no R in this pipeline",
+  "note": "Unidimensional 2PL discrimination a and difficulty b on the same 0/1 matrix. Uses Python only (girth). Multidimensional girth MML may fail on SciPy>=2 polychoric path; use 1D here.",
+  "n_persons": 459,
+  "n_items": 5,
+  "items": {
+    "Cavity": {
+      "a_2pl_discrimination": 0.6449231294712052,
+      "b_difficulty": 1.2910819688430348
+    },
+    "AFB_Smear": {
+      "a_2pl_discrimination": 3.1845988379002876,
+      "b_difficulty": 0.17216404567418517
+    },
+    "TB_PCR": {
+      "a_2pl_discrimination": 1.7469838900100916,
+      "b_difficulty": -0.18739057049804597
+    },
+    "Solid_Culture": {
+      "a_2pl_discrimination": 4.0883636586997945,
+      "b_difficulty": -0.17037184600511124
+    },
+    "Liquid_Culture": {
+      "a_2pl_discrimination": 3.016855758313378,
+      "b_difficulty": -0.6339305090926212
+    }
+  },
+  "discrimination_vector": [
+    0.6449231294712052,
+    3.1845988379002876,
+    1.7469838900100916,
+    4.0883636586997945,
+    3.016855758313378
+  ],
+  "difficulty_vector": [
+    1.2910819688430348,
+    0.17216404567418517,
+    -0.18739057049804597,
+    -0.17037184600511124,
+    -0.6339305090926212
+  ]
+}

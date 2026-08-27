@@ -1,0 +1,196 @@
+{
+  "n": 1427,
+  "meta_exclusion": {
+    "meta_main": "D:\\260428_META_ALL_CSV.csv",
+    "meta_d5_source": "D:\\260428_META_ALL_CSV.csv",
+    "n_paths": 2294,
+    "n_kept": 1427,
+    "n_dropped": 867,
+    "n_parse_fail_paths": 0,
+    "d5_migeom_studies_n": 0
+  },
+  "pca": {
+    "pc1_variance_ratio": 0.41815486053579837,
+    "loadings_pc1": {
+      "Cavity": 0.15971740877623958,
+      "AFB_Smear": 0.35030839989332596,
+      "TB_PCR": 0.7068493857670045,
+      "Solid_Culture": 0.8477538914259681,
+      "Liquid_Culture": 0.8510146663776775
+    },
+    "weights_normalized_sq": {
+      "Cavity": 0.012201054237901184,
+      "AFB_Smear": 0.05869403257854352,
+      "TB_PCR": 0.23897177878979478,
+      "Solid_Culture": 0.34374186611486013,
+      "Liquid_Culture": 0.34639126827890043
+    }
+  },
+  "cfa_path_coefficients": {
+    "Cavity": 1.0,
+    "AFB_Smear": 2.5412899184111812,
+    "TB_PCR": 9.07367355198801,
+    "Solid_Culture": 15.212000617077667,
+    "Liquid_Culture": 16.77291747279151
+  },
+  "cfa_standardized_loadings": {
+    "Cavity": 0.05266733261029399,
+    "AFB_Smear": 0.13391761702969654,
+    "TB_PCR": 0.47794987456726246,
+    "Solid_Culture": 0.802287326853132,
+    "Liquid_Culture": 0.8835617879216816
+  },
+  "cfa_relative_influence_0_1": {
+    "Cavity": 0.022407969922183784,
+    "AFB_Smear": 0.05697691122229811,
+    "TB_PCR": 0.20334970242106867,
+    "Solid_Culture": 0.3413430944395393,
+    "Liquid_Culture": 0.3759223219949101
+  },
+  "constrained_cfa_requested": true,
+  "constrained_cfa_prior_fixed_loadings": {
+    "Liquid_Culture": 1.0,
+    "Solid_Culture": 1.2710280373831775,
+    "TB_PCR": 1.0583657587548638,
+    "AFB_Smear": 1.3118971061093248,
+    "Cavity": 2.503067484662577
+  },
+  "constrained_cfa_fit": {
+    "DoF": {
+      "Value": 9
+    },
+    "DoF Baseline": {
+      "Value": 10
+    },
+    "chi2": {
+      "Value": 1227.0862474034786
+    },
+    "chi2 p-value": {
+      "Value": 0.0
+    },
+    "chi2 Baseline": {
+      "Value": 1474.0055704856345
+    },
+    "CFI": {
+      "Value": 0.16797704055222984
+    },
+    "GFI": {
+      "Value": 0.16751586834288856
+    },
+    "AGFI": {
+      "Value": 0.07501763149209839
+    },
+    "NFI": {
+      "Value": 0.16751586834288854
+    },
+    "TLI": {
+      "Value": 0.07553004505803326
+    },
+    "RMSEA": {
+      "Value": 0.30807609620125687
+    },
+    "AIC": {
+      "Value": 10.280187459840954
+    },
+    "BIC": {
+      "Value": 41.860165164701975
+    },
+    "LogLik": {
+      "Value": 0.8599062700795226
+    },
+    "SRMR": {
+      "Value": 0.24977778637016657
+    }
+  },
+  "constrained_cfa_standardized_loadings": {
+    "Cavity": 0.5694887440619291,
+    "AFB_Smear": 0.32621346525885636,
+    "TB_PCR": 0.27251541233238386,
+    "Solid_Culture": 0.3282556862126653,
+    "Liquid_Culture": 0.25723279353250367
+  },
+  "constrained_cfa_relative_influence_0_1": {
+    "Cavity": 0.3247344259154031,
+    "AFB_Smear": 0.18601375965946984,
+    "TB_PCR": 0.1553940036560804,
+    "Solid_Culture": 0.1871782768794194,
+    "Liquid_Culture": 0.14667953388962726
+  },
+  "cfa_fit": {
+    "DoF": {
+      "Value": 5
+    },
+    "DoF Baseline": {
+      "Value": 10
+    },
+    "chi2": {
+      "Value": 147.1292559325936
+    },
+    "chi2 p-value": {
+      "Value": 0.0
+    },
+    "chi2 Baseline": {
+      "Value": 1474.0055704856345
+    },
+    "CFI": {
+      "Value": 0.9029175443058957
+    },
+    "GFI": {
+      "Value": 0.9001840570493098
+    },
+    "AGFI": {
+      "Value": 0.8003681140986196
+    },
+    "NFI": {
+      "Value": 0.9001840570493098
+    },
+    "TLI": {
+      "Value": 0.8058350886117913
+    },
+    "RMSEA": {
+      "Value": 0.14118773668114226
+    },
+    "AIC": {
+      "Value": 19.79379221312881
+    },
+    "BIC": {
+      "Value": 72.42708838789717
+    },
+    "LogLik": {
+      "Value": 0.10310389343559467
+    },
+    "SRMR": {
+      "Value": 0.17480897392400707
+    }
+  },
+  "pls_pm": {
+    "outer_weights": {
+      "Cavity": 0.11045838848326903,
+      "AFB_Smear": 0.24226851897885238,
+      "TB_PCR": 0.4888473996622002,
+      "Solid_Culture": 0.5862950315617664,
+      "Liquid_Culture": 0.5885501379958765
+    },
+    "outer_loadings_corr_F": {
+      "Cavity": 0.15971741760195549,
+      "AFB_Smear": 0.35030840797947765,
+      "TB_PCR": 0.7068493877882704,
+      "Solid_Culture": 0.8477538888600213,
+      "Liquid_Culture": 0.8510146622699845
+    }
+  },
+  "priority_mean_rank": {
+    "Cavity": 5.0,
+    "AFB_Smear": 4.0,
+    "TB_PCR": 3.0,
+    "Solid_Culture": 2.0,
+    "Liquid_Culture": 1.0
+  },
+  "priority_ordered": [
+    "Liquid_Culture",
+    "Solid_Culture",
+    "TB_PCR",
+    "AFB_Smear",
+    "Cavity"
+  ]
+}

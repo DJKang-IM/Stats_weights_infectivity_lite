@@ -1,0 +1,27 @@
+Literature-AOR weighted infectivity score
+============================================================
+input_csv: D:\260510_META_Infectivity_weight-rule_CSV_exclusion_delete.csv
+n_complete_case: 459
+mode: log   precision_shrink: False
+
+Per-indicator (literature):
+  indicator        AOR    CI95          weight  source
+  Cavity          1.9    1.26-2.84     0.1687  Pooled meta-analysis (Cavitary Disease); transmission outcome
+  AFB_Smear       2.15   1.47-3.17     0.2012  Pooled meta-analysis (Sputum Smear Positive); transmission outcome
+  TB_PCR          3.8    1.10-13.60     0.3510  Lohmann 2012 (single study; Sputum PCR positive)
+  Solid_Culture   1.7    1.10-2.60     0.1395  Lohmann 2012 (Sputum culture positive; not solid/liquid-specific in paper)
+  Liquid_Culture  1.7    1.10-2.60     0.1395  Lohmann 2012 (same culture AOR; treated identically)
+
+Ordering check vs user feedback:
+  AFB >= Cavity : True
+  PCR  > Solid  : True
+  PCR  > Liquid : True
+
+Variants (always normalized to sum 1):
+  log_aor                      Cavity=0.1687 AFB_Smear=0.2012 TB_PCR=0.3510 Solid_Culture=0.1395 Liquid_Culture=0.1395
+  linear_aor                   Cavity=0.1689 AFB_Smear=0.1911 TB_PCR=0.3378 Solid_Culture=0.1511 Liquid_Culture=0.1511
+  log_aor_precision_shrunk     Cavity=0.2363 AFB_Smear=0.2966 TB_PCR=0.0974 Solid_Culture=0.1848 Liquid_Culture=0.1848
+
+Output files:
+  D:\Stats_weights_infectivity\artifacts\infectivity_literature_aor_weights_260510\summary.json
+  D:\Stats_weights_infectivity\artifacts\infectivity_literature_aor_weights_260510\scores_with_contributions.csv

@@ -1,0 +1,18 @@
+{
+  "backup_csv": "D:\\260510_META_Infectivity_weight-rule_CSV_exclusion_delete.csv.bak_20260514_012849",
+  "n_rows": 1664,
+  "n_exclude_pattern_reading": 950,
+  "n_complete_5labs": 459,
+  "n_exclude_and_complete_5labs": 0,
+  "n_exclude_partial_some_lab": 705,
+  "exclude_rows_cavity_nonnull": 0,
+  "nonexclude_cavity_nonnull": 672,
+  "interpretation": [
+    "CFA/SEM (meta_infectivity_empirical_constrained_sem.py) uses listwise complete cases: all 5 indicators non-missing.",
+    "Exclude-pattern rows had Cavity missing for every row in this backup - they cannot enter the complete-case cohort.",
+    "Clearing labs on Exclude rows therefore did not shrink the SEM n vs the same cohort on backup.",
+    "Cavity 'underevaluation' from mixing Exclude imaging with full labs is not supported for this Exclude rule: those rows had no Cavity label."
+  ],
+  "complete_case_cavity_pos_rate": 0.31808278867102396,
+  "complete_case_liquid_pos_rate": 0.7080610021786492
+}

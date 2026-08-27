@@ -1,0 +1,25 @@
+{
+  "n": 1427,
+  "clinical_weights": {
+    "Cavity": 3.0,
+    "AFB_Smear": 2.0,
+    "TB_PCR": 2.0,
+    "Solid_Culture": 1.0,
+    "Liquid_Culture": 1.0
+  },
+  "cfa_relative_influence": {
+    "Cavity": 0.022407969922183784,
+    "AFB_Smear": 0.05697691122229811,
+    "TB_PCR": 0.20334970242106867,
+    "Solid_Culture": 0.3413430944395393,
+    "Liquid_Culture": 0.3759223219949101
+  },
+  "pearson_r": 0.7333823933282886,
+  "pearson_p": 4.1438068849744325e-241,
+  "spearman_rho": 0.8065824287906199,
+  "spearman_p": 0.0,
+  "discordant_quantile": 0.9,
+  "discordance_abs_threshold": 1.1846597433342738,
+  "n_discordant": 214,
+  "cavity_pos_both_cultures_neg_n": 134
+}

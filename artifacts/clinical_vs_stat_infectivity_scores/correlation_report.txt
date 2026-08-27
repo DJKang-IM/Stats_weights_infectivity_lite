@@ -1,0 +1,37 @@
+=== Clinical vs statistical infectivity scores ===
+n = 1427
+Clinical weights (cols): {'Cavity': 3.0, 'AFB_Smear': 2.0, 'TB_PCR': 2.0, 'Solid_Culture': 1.0, 'Liquid_Culture': 1.0}
+CFA relative influence: {"Cavity": 0.022407969922183784, "AFB_Smear": 0.05697691122229811, "TB_PCR": 0.20334970242106867, "Solid_Culture": 0.3413430944395393, "Liquid_Culture": 0.3759223219949101}
+
+Pearson r (s_clin, s_stat) = 0.7334 (p=4.144e-241)
+Spearman rho = 0.8066 (p=1.000e-300)
+
+Discordance = z(s_clinical) - z(s_statistical); flag top 10.0% |discordance| (threshold |disc| >= 1.185)
+n_discordant_flagged = 214
+
+Phenotype counts (all patients):
+{
+  "Culture_pos_no_cavity": 649,
+  "AFB_or_PCR_only_no_cavity_no_culture": 263,
+  "Cavity_pos_any_culture_pos": 192,
+  "All_negative": 189,
+  "Cavity_pos_both_cultures_neg_afb_or_pcr_pos": 72,
+  "Cavity_pos_both_cultures_neg_no_afb_pcr": 62
+}
+
+Phenotype counts (discordant flagged):
+{
+  "Culture_pos_no_cavity": 131,
+  "Cavity_pos_both_cultures_neg_afb_or_pcr_pos": 72,
+  "Cavity_pos_any_culture_pos": 11
+}
+
+Cavity=1 & Solid=0 & Liquid=0: n=134
+  mean s_clinical=4.299 mean s_stat=0.101
+  mean z_discordance=1.294
+
+Discordant split (z_discordance = z_clinical - z_stat):
+  clinical score higher than statistical: n=83
+  statistical score higher than clinical: n=131
+
+Use discordant_patients.csv for full list (sorted by |z_discordance|).

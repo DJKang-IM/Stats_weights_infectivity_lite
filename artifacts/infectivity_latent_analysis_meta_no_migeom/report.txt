@@ -1,0 +1,110 @@
+=== Infectivity latent analysis ===
+n = 1427
+
+Meta filter (exclude any row with 미검 in D1..D4 lab columns, or in D5 reading text):
+{
+  "meta_main": "<REDACTED_PATH>",
+  "meta_d5_source": "<REDACTED_PATH>",
+  "n_paths": 2294,
+  "n_kept": 1427,
+  "n_dropped": 867,
+  "n_parse_fail_paths": 0,
+  "d5_migeom_studies_n": 0
+}
+
+1) Standardization: sklearn StandardScaler on all 5 indicators.
+
+2) PCA (PC1 correlation loadings & squared-loading normalized weights)
+{
+  "Cavity": 0.15971740877623958,
+  "AFB_Smear": 0.35030839989332596,
+  "TB_PCR": 0.7068493857670045,
+  "Solid_Culture": 0.8477538914259681,
+  "Liquid_Culture": 0.8510146663776775
+}
+{
+  "Cavity": 0.012201054237901184,
+  "AFB_Smear": 0.05869403257854352,
+  "TB_PCR": 0.23897177878979478,
+  "Solid_Culture": 0.34374186611486013,
+  "Liquid_Culture": 0.34639126827890043
+}
+PC1 variance ratio: 0.4182
+
+3) CFA / SEM (semopy, MLW) - Infectivity =~ 5 indicators
+              lval  op            rval   Estimate  Std. Err    z-value   p-value
+0           Cavity   ~     Infectivity   1.000000         -          -         -
+1        AFB_Smear   ~     Infectivity   2.541290  1.485033   1.711268  0.087032
+2           TB_PCR   ~     Infectivity   9.073674  4.962734   1.828362  0.067495
+3    Solid_Culture   ~     Infectivity  15.212001  8.290262   1.834924  0.066517
+4   Liquid_Culture   ~     Infectivity  16.772917  9.146215   1.833864  0.066674
+5      Infectivity  ~~     Infectivity   0.002776  0.003024   0.917935  0.358653
+6        AFB_Smear  ~~       AFB_Smear   0.981738  0.036873  26.624942       0.0
+7           Cavity  ~~          Cavity   0.998006  0.037381  26.698332       0.0
+8   Liquid_Culture  ~~  Liquid_Culture   0.219402  0.035442   6.190376       0.0
+9    Solid_Culture  ~~   Solid_Culture   0.355626  0.031343  11.346153       0.0
+10          TB_PCR  ~~          TB_PCR   0.771961  0.030704   25.14199       0.0
+
+Fit indices:
+       DoF  DoF Baseline        chi2  chi2 p-value  chi2 Baseline       CFI       GFI      AGFI       NFI       TLI     RMSEA        AIC        BIC    LogLik      SRMR
+Value    5            10  147.129256           0.0     1474.00557  0.902918  0.900184  0.800368  0.900184  0.805835  0.141188  19.793792  72.427088  0.103104  0.174809
+
+CFA standardized coefficients (semopy Est. Std = standardized reflective loadings, indicator ~ Infectivity):
+{
+  "Cavity": 0.05266733261029399,
+  "AFB_Smear": 0.13391761702969654,
+  "TB_PCR": 0.47794987456726246,
+  "Solid_Culture": 0.802287326853132,
+  "Liquid_Culture": 0.8835617879216816
+}
+
+Relative influence on [0, 1] (|Est. Std| scaled to sum = 1; compare magnitude across indicators):
+{
+  "Cavity": 0.022407969922183784,
+  "AFB_Smear": 0.05697691122229811,
+  "TB_PCR": 0.20334970242106867,
+  "Solid_Culture": 0.3413430944395393,
+  "Liquid_Culture": 0.3759223219949101
+}
+
+Rank by CFA relative influence (1 = largest share):
+  1. Liquid_Culture: 0.3759
+  2. Solid_Culture: 0.3413
+  3. TB_PCR: 0.2033
+  4. AFB_Smear: 0.0570
+  5. Cavity: 0.0224
+
+4) PLS-PM (reflective outer, iterative corr weights)
+{
+  "outer_weights": {
+    "Cavity": 0.11045838848326903,
+    "AFB_Smear": 0.24226851897885238,
+    "TB_PCR": 0.4888473996622002,
+    "Solid_Culture": 0.5862950315617664,
+    "Liquid_Culture": 0.5885501379958765
+  },
+  "outer_loadings_corr_F": {
+    "Cavity": 0.15971741760195549,
+    "AFB_Smear": 0.35030840797947765,
+    "TB_PCR": 0.7068493877882704,
+    "Solid_Culture": 0.8477538888600213,
+    "Liquid_Culture": 0.8510146622699845
+  }
+}
+
+5) Priority (lower mean rank = higher priority across PCA weight order, PLS |loading|, SEM |path|):
+  Liquid_Culture: mean rank = 1.000
+  Solid_Culture: mean rank = 2.000
+  TB_PCR: mean rank = 3.000
+  AFB_Smear: mean rank = 4.000
+  Cavity: mean rank = 5.000
+
+Suggested overall priority (1 = most influential):
+  1. Liquid_Culture
+  2. Solid_Culture
+  3. TB_PCR
+  4. AFB_Smear
+  5. Cavity
+
+Model fit (rules of thumb; ML on standardized scores -- binary 0/1 indicators are approximate): CFI/TLI >= 0.95 good; RMSEA <= 0.06 reasonable; SRMR <= 0.08 good.
+Observed: CFI=0.9029, TLI=0.8058, RMSEA=0.14118773668114226, SRMR=0.17480897392400707

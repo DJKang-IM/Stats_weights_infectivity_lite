@@ -1,0 +1,2 @@
+IRT (1D binary 2PL) was fit with Python package girth (twopl_mml). This is the same model class as mirt(..., 1, itemtype='2PL') but R is not used.
+See twopl_girth_mml.json for a and b.

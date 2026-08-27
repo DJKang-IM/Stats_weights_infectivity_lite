@@ -1,0 +1,50 @@
+{
+  "definition": {
+    "proxy_gold": "Liquid_Culture (액체 배양) 양성 수 - 단일 병원 메타 기준 임시 기준.",
+    "ratio_X_user_style": "n(Liquid+) / n(test+) - 같은 코호트·완전 사례 기준.",
+    "fixed_loading_scale": "invlog1p",
+    "loading_prior": "Constrained CFA: Liquid_Culture=1; other loadings = ln(2) / ln(1 + N_j+/N_L+). Double transform sense: after forming r=N_j+/N_L+, use reciprocal of log1p(r), normalized so Liquid=1; very small r get much larger fixed loadings than log1p or linear."
+  },
+  "n_complete_case": 459,
+  "positive_counts": {
+    "Cavity": 146,
+    "AFB_Smear": 202,
+    "TB_PCR": 254,
+    "Solid_Culture": 258,
+    "Liquid_Culture": 325
+  },
+  "negative_counts": {
+    "Cavity": 313,
+    "AFB_Smear": 257,
+    "TB_PCR": 205,
+    "Solid_Culture": 201,
+    "Liquid_Culture": 134
+  },
+  "liquid_over_positive_ratios": {
+    "Liquid_per_AFB=(proxy_vs_AF)": 1.608910891089109,
+    "Liquid_per_Solid": 1.2596899224806202,
+    "Liquid_per_PCR": 1.279527559055118,
+    "Liquid_per_Cavity": 2.2260273972602738
+  },
+  "linear_loadings_Nj_over_NL": {
+    "Liquid_Culture": 1.0,
+    "Cavity": 0.4492307692307692,
+    "AFB_Smear": 0.6215384615384615,
+    "TB_PCR": 0.7815384615384615,
+    "Solid_Culture": 0.7938461538461539
+  },
+  "inverse_for_loading": {
+    "Cavity": 0.4492307692307692,
+    "AFB_Smear": 0.6215384615384615,
+    "TB_PCR": 0.7815384615384615,
+    "Solid_Culture": 0.7938461538461539,
+    "Liquid_Culture": 1.0
+  },
+  "constrained_fixed_loadings_unnormalized": {
+    "Liquid_Culture": 1.0,
+    "Cavity": 1.868155515932439,
+    "AFB_Smear": 1.43397291010581,
+    "TB_PCR": 1.2003020487029927,
+    "Solid_Culture": 1.1861605918774394
+  }
+}

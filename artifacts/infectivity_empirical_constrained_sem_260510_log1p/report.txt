@@ -1,0 +1,52 @@
+=== Empirical sensitivity (Liquid culture = proxy gold) ===
+n complete-case rows (D1-D5 non-missing 0/1): 459
+
+Positive counts:
+{
+  "Cavity": 146,
+  "AFB_Smear": 202,
+  "TB_PCR": 254,
+  "Solid_Culture": 258,
+  "Liquid_Culture": 325
+}
+
+Ratios n(Liquid+)/n(test+) (higher => fewer positives vs liquid):
+{
+  "Liquid_per_AFB=(proxy_vs_AF)": 1.608910891089109,
+  "Liquid_per_Solid": 1.2596899224806202,
+  "Liquid_per_PCR": 1.279527559055118,
+  "Liquid_per_Cavity": 2.2260273972602738
+}
+
+Constrained CFA fixed loadings (scale=log1p; Liquid_Culture=1):
+{
+  "Liquid_Culture": 1.0,
+  "Cavity": 0.5352873416969663,
+  "AFB_Smear": 0.6973632437213977,
+  "TB_PCR": 0.8331236300734197,
+  "Solid_Culture": 0.8430561652846796
+}
+
+=== Free CFA fit ===
+       DoF  DoF Baseline       chi2  chi2 p-value  chi2 Baseline       CFI       GFI      AGFI       NFI       TLI     RMSEA        AIC        BIC    LogLik      SRMR
+Value    5            10  54.406762  1.728779e-10     586.353235  0.914277  0.907212  0.814423  0.907212  0.828554  0.146884  19.762933  61.053436  0.118533  0.258079
+
+=== Constrained CFA fit ===
+       DoF  DoF Baseline        chi2  chi2 p-value  chi2 Baseline       CFI       GFI     AGFI       NFI      TLI     RMSEA        AIC        BIC    LogLik      SRMR
+Value    9            10  104.023919           0.0     586.353235  0.835129  0.822592  0.80288  0.822592  0.81681  0.151832  11.546737  36.321038  0.226632  0.193097
+
+Constrained standardized loadings (Est. Std) & relative influence [0,1]:
+{
+  "Cavity": 0.4014016303898031,
+  "AFB_Smear": 0.589007390542469,
+  "TB_PCR": 0.6338360545881183,
+  "Solid_Culture": 0.7062172996054978,
+  "Liquid_Culture": 0.7471336974136081
+}
+{
+  "Cavity": 0.1304270024163971,
+  "AFB_Smear": 0.1913855413964205,
+  "TB_PCR": 0.20595167125525501,
+  "Solid_Culture": 0.22947043177851423,
+  "Liquid_Culture": 0.24276535315341313
+}

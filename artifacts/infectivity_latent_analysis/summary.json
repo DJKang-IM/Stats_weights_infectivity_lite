@@ -1,0 +1,104 @@
+{
+  "n": 2294,
+  "pca": {
+    "pc1_variance_ratio": 0.4086506956001401,
+    "loadings_pc1": {
+      "Cavity": 0.3506642667130208,
+      "AFB_Smear": 0.6181402243947043,
+      "TB_PCR": 0.7304173664265812,
+      "Solid_Culture": 0.6743411818339742,
+      "Liquid_Culture": 0.741582870852478
+    },
+    "weights_normalized_sq": {
+      "Cavity": 0.0601811910628439,
+      "AFB_Smear": 0.18700437372489523,
+      "TB_PCR": 0.2611078531967433,
+      "Solid_Culture": 0.22255487848829916,
+      "Liquid_Culture": 0.26915170352721846
+    }
+  },
+  "cfa_path_coefficients": {
+    "Cavity": 1.0,
+    "AFB_Smear": 2.066272481731545,
+    "TB_PCR": 2.9773231531200683,
+    "Solid_Culture": 2.763508097689471,
+    "Liquid_Culture": 3.3509855512201163
+  },
+  "cfa_fit": {
+    "DoF": {
+      "Value": 5
+    },
+    "DoF Baseline": {
+      "Value": 10
+    },
+    "chi2": {
+      "Value": 200.22609060841404
+    },
+    "chi2 p-value": {
+      "Value": 0.0
+    },
+    "chi2 Baseline": {
+      "Value": 1483.4600250351964
+    },
+    "CFI": {
+      "Value": 0.8675049968839497
+    },
+    "GFI": {
+      "Value": 0.8650276466980205
+    },
+    "AGFI": {
+      "Value": 0.7300552933960409
+    },
+    "NFI": {
+      "Value": 0.8650276466980203
+    },
+    "TLI": {
+      "Value": 0.7350099937678992
+    },
+    "RMSEA": {
+      "Value": 0.13049140262333633
+    },
+    "AIC": {
+      "Value": 19.825434968955175
+    },
+    "BIC": {
+      "Value": 77.20595794584834
+    },
+    "LogLik": {
+      "Value": 0.0872825155224124
+    },
+    "SRMR": {
+      "Value": 0.13674099417923855
+    }
+  },
+  "pls_pm": {
+    "outer_weights": {
+      "Cavity": 0.24531855768915384,
+      "AFB_Smear": 0.4324400273189387,
+      "TB_PCR": 0.5109871353900368,
+      "Solid_Culture": 0.4717572206416635,
+      "Liquid_Culture": 0.5187983233049678
+    },
+    "outer_loadings_corr_F": {
+      "Cavity": 0.35066427744554335,
+      "AFB_Smear": 0.6181402301837808,
+      "TB_PCR": 0.7304173654997709,
+      "Solid_Culture": 0.674341176893935,
+      "Liquid_Culture": 0.7415828663570332
+    }
+  },
+  "priority_mean_rank": {
+    "Cavity": 5.0,
+    "AFB_Smear": 4.0,
+    "TB_PCR": 2.0,
+    "Solid_Culture": 3.0,
+    "Liquid_Culture": 1.0
+  },
+  "priority_ordered": [
+    "Liquid_Culture",
+    "TB_PCR",
+    "Solid_Culture",
+    "AFB_Smear",
+    "Cavity"
+  ]
+}

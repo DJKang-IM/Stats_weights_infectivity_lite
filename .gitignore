@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.bak_*
+data/*.csv
+!data/README.md
+
+# Lite: never commit PHI / full-res
+*.dcm
+*.dicom
+**/full_res/
+**/original/
+.env

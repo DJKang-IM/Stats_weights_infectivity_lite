@@ -1,0 +1,42 @@
+{
+  "definition": {
+    "proxy_gold": "Liquid_Culture (액체 배양) 양성 수 — 단일 병원 메타 기준 임시 기준.",
+    "ratio_X_user_style": "n(Liquid+) / n(test+) — 같은 코호트·완전 사례 기준.",
+    "loading_prior": "Constrained CFA: Infectivity =~ fixed loadings; Liquid_Culture=1, other loadings = n(test+)/n(Liquid+) (민감도 후보가 더 적게 양성이면 액체 대비 작은 계수)."
+  },
+  "n_complete_case": 1661,
+  "positive_counts": {
+    "Cavity": 696,
+    "AFB_Smear": 701,
+    "TB_PCR": 813,
+    "Solid_Culture": 825,
+    "Liquid_Culture": 1048
+  },
+  "negative_counts": {
+    "Cavity": 965,
+    "AFB_Smear": 960,
+    "TB_PCR": 848,
+    "Solid_Culture": 836,
+    "Liquid_Culture": 613
+  },
+  "liquid_over_positive_ratios": {
+    "Liquid_per_AFB=(proxy_vs_AF)": 1.4950071326676178,
+    "Liquid_per_Solid": 1.2703030303030303,
+    "Liquid_per_PCR": 1.2890528905289054,
+    "Liquid_per_Cavity": 1.5057471264367817
+  },
+  "inverse_for_loading": {
+    "Cavity": 0.6641221374045801,
+    "AFB_Smear": 0.6688931297709924,
+    "TB_PCR": 0.7757633587786259,
+    "Solid_Culture": 0.7872137404580153,
+    "Liquid_Culture": 1.0
+  },
+  "constrained_fixed_loadings_unnormalized": {
+    "Liquid_Culture": 1.0,
+    "Cavity": 0.6641221374045801,
+    "AFB_Smear": 0.6688931297709924,
+    "TB_PCR": 0.7757633587786259,
+    "Solid_Culture": 0.7872137404580153
+  }
+}

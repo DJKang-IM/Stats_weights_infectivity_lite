@@ -1,0 +1,50 @@
+{
+  "input_csv": "D:\\260510_META_Infectivity_weight-rule_CSV_exclusion_delete.csv",
+  "n_complete_case": 459,
+  "cavity_boost_applied": 2.5,
+  "empirical_sensitivity_report_keys": [
+    "definition",
+    "n_complete_case",
+    "positive_counts",
+    "negative_counts",
+    "liquid_over_positive_ratios",
+    "inverse_for_loading",
+    "constrained_fixed_loadings_unnormalized"
+  ],
+  "fixed_loadings_lambda_Nj_over_NL": {
+    "Liquid_Culture": 1.0,
+    "Cavity": 0.4492307692307692,
+    "AFB_Smear": 0.6215384615384615,
+    "TB_PCR": 0.7815384615384615,
+    "Solid_Culture": 0.7938461538461539
+  },
+  "liquid_over_positive_Rj": {
+    "Liquid_per_AFB=(proxy_vs_AF)": 1.608910891089109,
+    "Liquid_per_Solid": 1.2596899224806202,
+    "Liquid_per_PCR": 1.279527559055118,
+    "Liquid_per_Cavity": 2.2260273972602738
+  },
+  "discrimination_abs_corr_z_pc1": {
+    "Cavity": 0.3831474494469261,
+    "AFB_Smear": 0.8025906157898209,
+    "TB_PCR": 0.7182593169056645,
+    "Solid_Culture": 0.8167264661778727,
+    "Liquid_Culture": 0.7425063731568751
+  },
+  "weights_before_cavity_boost": {
+    "Cavity": 0.11063297122751012,
+    "AFB_Smear": 0.231746249733145,
+    "TB_PCR": 0.2073957753231051,
+    "Solid_Culture": 0.23582794499567436,
+    "Liquid_Culture": 0.21439705872056533
+  },
+  "weights_on_standardized_indicators": {
+    "Cavity": 0.23721648176592433,
+    "AFB_Smear": 0.1987618317186587,
+    "TB_PCR": 0.1778771576299473,
+    "Solid_Culture": 0.20226257974729733,
+    "Liquid_Culture": 0.1838819491381725
+  },
+  "weighting_method": "abs corr(z_j, PC1) normalized; Cavity multiplied by cavity_boost then renormalized",
+  "pca_pc1_variance_ratio": 0.5050415891254658
+}

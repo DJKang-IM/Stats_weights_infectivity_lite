@@ -1,0 +1,103 @@
+=== Preprocess ===
+{
+  "input_csv": "<REDACTED_PATH>",
+  "n_rows_original": 1664,
+  "n_rows_dropped_exclude": 3,
+  "n_rows_after_exclude": 1661,
+  "exclude_rule": "Reading: ###...Exclude...### OR line-end :Exclude OR 로 Exclude; optional --exclude-regex",
+  "exclude_regex_extra": null,
+  "impute": {
+    "method": "per_column_balanced_half_sorted_by_StudyNo",
+    "detail": {
+      "Cavity": {
+        "n_imputed": 989,
+        "n_zero": 494,
+        "n_one": 495
+      },
+      "AFB_Smear": {
+        "n_imputed": 285,
+        "n_zero": 142,
+        "n_one": 143
+      },
+      "TB_PCR": {
+        "n_imputed": 504,
+        "n_zero": 252,
+        "n_one": 252
+      },
+      "Solid_Culture": {
+        "n_imputed": 875,
+        "n_zero": 437,
+        "n_one": 438
+      },
+      "Liquid_Culture": {
+        "n_imputed": 428,
+        "n_zero": 214,
+        "n_one": 214
+      }
+    }
+  }
+}
+
+=== Empirical sensitivity + fixed loadings ===
+{
+  "Liquid_Culture": 1.0,
+  "Cavity": 0.6641221374045801,
+  "AFB_Smear": 0.6688931297709924,
+  "TB_PCR": 0.7757633587786259,
+  "Solid_Culture": 0.7872137404580153
+}
+
+=== Free CFA ===
+       DoF  DoF Baseline        chi2  chi2 p-value  chi2 Baseline       CFI       GFI      AGFI       NFI       TLI    RMSEA        AIC        BIC    LogLik      SRMR
+Value    5            10  167.981593           0.0    2104.174821  0.922174  0.920167  0.840335  0.920167  0.844348  0.14013  19.797734  73.949485  0.101133  0.153378
+
+=== Constrained CFA (empirical fixed loadings) ===
+       DoF  DoF Baseline        chi2  chi2 p-value  chi2 Baseline       CFI       GFI      AGFI       NFI      TLI     RMSEA       AIC        BIC   LogLik      SRMR
+Value    9            10  310.390949           0.0    2104.174821  0.856081  0.852488  0.836098  0.852488  0.84009  0.142033  11.62626  44.117311  0.18687  0.114257
+
+Constrained standardized loadings & relative influence [0,1]:
+{
+  "Cavity": 0.5172650996415393,
+  "AFB_Smear": 0.5767701035263938,
+  "TB_PCR": 0.6221674775496694,
+  "Solid_Culture": 0.6398384452077777,
+  "Liquid_Culture": 0.7448797899271221
+}
+{
+  "Cavity": 0.16681015533068932,
+  "AFB_Smear": 0.1859996172678363,
+  "TB_PCR": 0.20063958237987625,
+  "Solid_Culture": 0.20633820164093863,
+  "Liquid_Culture": 0.24021244338065953
+}
+
+=== Bootstrap constrained CFA ===
+{
+  "n_bootstrap_requested": 40,
+  "n_failed_fits": 0,
+  "CFI": {
+    "n": 40,
+    "mean": 0.8503710121872758,
+    "std": 0.017739499322047252,
+    "q025": 0.8200815825845538,
+    "q05": 0.8228493225845339,
+    "q50": 0.8504426833615008,
+    "q95": 0.8843495819612623,
+    "q975": 0.8865687377348357
+  },
+  "Cavity_standardized_loading": {
+    "n": 40,
+    "mean": 0.5159021922629118,
+    "std": 0.012417737781363942,
+    "q025": 0.4938207074807702,
+    "q05": 0.4963538466282059,
+    "q50": 0.5188733248893154,
+    "q95": 0.5321024946553635,
+    "q975": 0.5346321638254535
+  }
+}
+
+=== Caveats (KR) ===
+- Cavity 해석: 방사선학적 지표 vs 미생물 배양 중심 잠재요인이면 표준화적재가 상대적으로 낮게 나올 수 있음.
+- 균형 impute(50/50)는 정보가 없을 때의 *가정*이며, 민감도는 bootstrap 구간으로 요약.
+- Bootstrap은 행 재표본 MLE SEM; 진한 의미의 베이지안 사후분포와 동일하지 않음.
